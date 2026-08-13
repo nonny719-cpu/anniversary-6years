@@ -787,6 +787,13 @@
 
     function startWebsite() {
 
+  // เล่นเพลงทันทีตอนแตะหัวใจ
+  if (player && isApiReady) {
+    player.playVideo();
+    player.unMute();
+    player.setVolume(100);
+  }
+
   const heart = document.querySelector('.big-heart');
 
   heart.classList.add('opening');
@@ -803,10 +810,6 @@
     document
       .querySelector('.lock-box')
       .classList.add('show');
-
-    if (player && player.playVideo) {
-      player.playVideo();
-    }
 
   }, 1000);
 
